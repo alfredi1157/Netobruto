@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Netobruto</title>
-  </head>
-  <body>
-    <h1>Mirësevini në projektin Netobruto!</h1>
-  </body>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netobruto</title>
+</head>
+<body>
+  <h1>Mirësevini në projektin Netobruto!</h1>
+
+  <p>Zgjidh një shumë bruto:</p>
+  <input type="number" id="bruto" placeholder="Shuma bruto në €" />
+  <button onclick="llogarit()">Llogarit neto</button>
+
+  <p id="rezultati"></p>
+
+  <script>
+    function llogarit() {
+      const bruto = parseFloat(document.getElementById('bruto').value);
+      if (isNaN(bruto)) {
+        document.getElementById('rezultati').innerText = "Ju lutem shkruani një shumë të vlefshme.";
+        return;
+      }
+      const neto = bruto * 0.75;
+      document.getElementById('rezultati').innerText = `Paga neto: ${neto.toFixed(2)} €`;
+    }
+  </script>
+</body>
 </html>
